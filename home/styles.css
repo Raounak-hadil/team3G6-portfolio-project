@@ -1,0 +1,124 @@
+/* ===== Dark Mode Team Page ===== */
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --accent: #60a5fa;
+  --muted: #94a3b8;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at 30% 30%, #0b1120 0%, #0f172a 100%);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Team Section */
+.team-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 2rem 1rem 3rem;
+}
+
+/* Grid for 5 cards nicely centered */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.member-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  width: 230px;
+  text-align: center;
+  box-shadow: 0 4px 18px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 28px rgba(96, 165, 250, 0.35);
+}
+
+.member-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+.member-card:hover img {
+  filter: brightness(1.1);
+}
+
+.member-card h3 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  letter-spacing: 0.5px;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem 0 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .team-grid > :nth-child(4),
+  .team-grid > :nth-child(5) {
+    justify-self: center;
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .member-card {
+    width: 90%;
+  }
+}
