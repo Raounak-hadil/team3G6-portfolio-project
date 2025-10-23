@@ -3,3 +3,5 @@ Collaborative project for building a team portfolio website. Managed with a feat
 Team members:
 1- Kaoua Raounak Hadil : @Raounak-hadil
 2- Bouhabel Ghada: @ghadaBhb
+3- BOUDISSA Lyna :@lynaboudissa
+
